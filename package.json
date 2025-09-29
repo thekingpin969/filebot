@@ -1,0 +1,19 @@
+{
+  "name": "mbot",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
+    "hono": "^4.9.7",
+    "mongodb": "4.13.0",
+    "telegraf": "^4.16.3"
+  }
+}
