@@ -5,6 +5,7 @@ import botWebhookHandler from "./botWebhookHandler";
 const app = new Hono();
 app.use(cors({ origin: "*" }));
 
+app.get('/', (c) => c.text('ok'))
 app.post('/webhook', botWebhookHandler)
 
 
