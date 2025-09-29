@@ -14,7 +14,7 @@ tgBot.on('document', onFileReceive)
 tgBot.on('inline_query', onInlineQuery)
 
 if (process.env.NODE_ENV == 'production') {
-    const url = '' + '/webhook'
+    const url = 'https://filebot-aooc.onrender.com' + '/webhook'
     tgBot.telegram.setWebhook(url, { secret_token: 'authorized_request_from_vekilisurabot' })
     console.log('bot running throw webhook')
 } else {
