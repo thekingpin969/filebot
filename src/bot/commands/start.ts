@@ -8,6 +8,7 @@ async function start(ctx: any) {
     let fileId;
     try {
         const id = ctx.startPayload
+        if (!id) return await ctx.reply('welcome')
         const holder = await ctx.reply('please wait...')
         const { data: [file] }: any = await db.getLogs({ file_unique_id: id }, 'metadata', {}, 1)
         if (!file) return await ctx.reply('no files found!')

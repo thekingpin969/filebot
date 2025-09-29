@@ -13,4 +13,14 @@ tgBot.action(/^download_file:(.+)$/, onDownloadRequest)
 tgBot.on('document', onFileReceive)
 tgBot.on('inline_query', onInlineQuery)
 
+if (process.env.NODE_ENV == 'production') {
+    const url = '' + '/webhook'
+    tgBot.telegram.setWebhook(url, { secret_token: 'authorized_request_from_vekilisurabot' })
+    console.log('bot running throw webhook')
+} else {
+    tgBot.launch()
+    console.log('bot running')
+}
+
+
 export default tgBot
